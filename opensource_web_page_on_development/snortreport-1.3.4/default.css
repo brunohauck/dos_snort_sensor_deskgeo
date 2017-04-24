@@ -1,0 +1,103 @@
+body {
+	background-color: #CCCC99;
+	color: #000000;
+	font-family: arial, helvetica, sans-serif;
+}
+
+td {
+	font-family: arial, helvetica, sans-serif;
+	color: #000000;
+}
+
+.smalltitle {
+	font-size: 8pt;
+	font-style: italic;
+}
+
+.timeblock {
+	font-size: 10pt;
+}
+
+.detailsigs {
+	color: #ffffff;
+	font-size: 12pt;
+	font-weight: bold;
+	background-color: #878743;
+}
+
+.sigtitles {
+	font-size: 10pt;
+	font-weight: bold;
+	background-color: #B59766;
+}
+
+.sigblocks {
+	font-size: 10pt;
+	background-color: #BCBC7A;
+}
+
+.sigblocks2 {
+	font-size: 10pt;
+	background-color: #CCCC99;
+}
+
+.trace {
+	font-size: xx-small;
+}
+
+.detaildumphead {
+	font-family: courier new, courier, mono;
+	background-color: #BCBC7A;
+	font-size: 10pt;
+}
+
+.detailpayload {
+	font-family: courier new, courier, mono;
+	font-size: 10pt;
+}
+
+span.head {
+	font-weight: bold;
+	font-style: italic;
+	font-size: 24pt;
+}
+
+.timeblock {
+	font-size: 10pt;
+}
+
+.sigtitle {
+	font-weight: bold;
+	font-size: 14pt;
+}
+
+.sigref {
+	font-size: 10pt;
+}
+
+a {
+	color: #336600;
+}
+
+a:active {
+	color: red;
+}
+
+a:visited {
+	color: #336600;
+}
+
+a:link {
+	color: #336600;
+}
+
+a:hover {
+	color: #336600;
+	background-color: #CCCCCC;
+}
+
+.fixtopbottom {
+	border:solid;
+	border-width:2px;
+	border-color:#CCCC99;
+}

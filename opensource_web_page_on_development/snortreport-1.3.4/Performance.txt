@@ -1,0 +1,53 @@
+// Snort Report 1.3.4
+// Copyright (C) 2000-2013 Symmetrix Technologies, LLC.
+// September 9, 2013
+
+
+// Performance.txt contributed to Snort Report 1.1
+// Copyright (C) 2001 Chris Adams
+
+DB Tuning Notes
+	Run create_indexes.sql to create some indexes which may dramatically
+	improve performance
+
+	See http://www.mysql.com/doc/S/e/Server_parameters.html for general
+	server tuning tips
+	
+PHP Notes
+	There were several places where we were doing lots of loops (e.g.
+	checking src & dest IP counts in alerts.php). I've replaced these
+	with arrays - the array functions are native code, faster and do
+	things like hashing so checking for array[$ip] is *MUCH* faster than
+	looping over the array manually, even using foreach instead of the
+	slower for. This improved performance by over a factor of 4 in my
+	testing.
+	
+	preg_* will be faster than ereg_*
+
+	Set PROFILING in srconf.php to true to see where time is being spent.
+
+Change Notes:	
+	$a is now indexed by sig_id. Since array keys are hashed and native
+	code, this is *MUCH* faster than searching the array manually. (=
+	50% speed gain) 
+
+	$uniquesigs can now be calculated using count($a), which is faster
+	than doing it on the fly. 
+
+	srcIP and dstIP have been replaced with arrays keyed on IP, for the
+	same reason. count() is much faster than linear-searching on each
+	record. (= 50% speed gain) 
+
+	removed the test for portscans on each loop - our query excludes or
+	includes portscans as appropriate and we don't need to 100,000
+	records for it. 
+
+	Removed check for earliest/latest alerts. SELECT MIN()/MAX() FROM
+	event is fast enough and it removes some code from the inner loops. 
+
+	Merged the event.timestamp > and < code into a variable named
+	$EventTimeConstraint to avoid duplication. 
+
+	Added a few strategic flush() calls to speed perceived load time.
+	DNS lookups can add minutes to the page load time - calling flush()
+	after each one makes the page appear to load faster.

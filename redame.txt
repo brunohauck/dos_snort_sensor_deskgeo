@@ -1,0 +1,34 @@
+-"^`\                                        /`^"-.
+  .'   ___\                                      /___   `.
+ /    /.---.                                    .---.\    \
+|    //     '-.  ___________________________ .-'     \\    |
+|   ;|         \/--------------------------//         |;   |
+\   ||       |\_)    DESKgeo ubuntu linux  (_/|       ||   /
+ \  | \  . \ ;  | How to Install DESKgeo   || ; / .  / |  /
+  '\_\ \\ \ \ \ |                          ||/ / / // /_/'
+        \\ \ \ \|    Server Release 1.0    |/ / / //
+         `'-\_\_\    Author Bruno Hauck    /_/_/-'`
+                '--------------------------'
+
+---------------------------------------------------------
+   \
+    \
+        .--.
+       |o_o |
+       |:_/ |
+      //   \ \
+     (|     | )
+    /'\_   _/`\
+    \___)=(___/
+	
+//--------------------------------------------------------
+
+How to install DESKgeo sensor script
+
+1 - Install Snort for ubuntu linux using barnyard
+2 - Create a Snort rule to log http port 80 and https por 443
+3 - Copy the file on /snort_php_sensor_scripts git folder to /var/log/snort 
+4 - Create a user account on deskgeo.com
+5 - Contact me ( Bruno Hauck ) at brunohauck@gmail.com to grant access to deskgeo sensor <-> cloud communications
+
+  	
